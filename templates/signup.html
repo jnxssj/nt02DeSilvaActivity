@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../static/css/signup.css">
+
+</head>
+
+    <body>
+
+        <main class="page">
+            <div class="card">
+
+                <div class="form-side">
+                    <p class="eyebrow">Sign Up</p>
+                    <h1>Create Account</h1>
+
+                    <!-- === Step indicator === -->
+                    <ol class="steps">
+                        <li class="step active" id="stepDot1"><span>1</span></li>
+                        <li class="line"></li>
+                        <li class="step" id="stepDot2"><span>2</span></li>
+                        <li class="line"></li>
+                        <li class="step" id="stepDot3"><span>3</span></li>
+                    </ol>
+
+                    <form id="signupForm" novalidate>
+
+                        <!-- === STEP 1: Personal Information === -->
+                        <section class="step-panel active" id="panel1">
+                            <div class="field-row">
+                                <div class="field">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" id="firstName" placeholder="Juan" required>
+                                </div>
+                                <div class="field">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" id="lastName" placeholder="Dela Cruz" required>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label for="dob">Date of Birth</label>
+                                <input type="date" id="dob" required>
+                            </div>
+
+                            <div class="field">
+                                <label for="gender">Gender</label>
+                                <select id="gender" required>
+                                    <option value="" disabled selected>Select gender</option>
+                                    <option value="female">Female</option>
+                                    <option value="male">Male</option>
+                                    <option value="prefer-not-to-say">Prefer not to say</option>
+                                </select>
+                            </div>
+
+                            <div class="field">
+                                <label for="contact">Contact Number</label>
+                                <input type="tel" id="contact" placeholder="09xx xxx xxxx" required>
+                            </div>
+
+                            <div class="field-row">
+                                <div class="field">
+                                    <label for="houseNo">House No.</label>
+                                    <input type="text" id="houseNo" placeholder="e.g. 1234" required>
+                                </div>
+                                <div class="field">
+                                    <label for="street">Street</label>
+                                    <input type="text" id="street" placeholder="Street Name" required>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label for="purok">Purok</label>
+                                <select id="purok" required>
+                                    <option value="" disabled selected>Select Purok</option>
+                                    <option value="1">Purok 1</option>
+                                    <option value="2">Purok 2</option>
+                                    <option value="3">Purok 3</option>
+                                    <option value="4">Purok 4</option>
+                                    <option value="5">Purok 5</option>
+                                </select>
+                            </div>
+
+                            <small class="error" id="step1Error"></small>
+                            <button type="button" class="btn-primary" id="toStep2">Next</button>
+                        </section>
+
+                        <!-- STEP 2: Email & Password -->
+                        <section class="step-panel" id="panel2">
+                            <div class="field">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" placeholder="you@gmail.com" required>
+                            </div>
+                            <div class="field">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" placeholder="Enter password" required>
+                            </div>
+                            <div class="field">
+                                <label for="confirmPassword">Confirm Password</label>
+                                <input type="password" id="confirmPassword" placeholder="Re-enter password" required>
+                            </div>
+
+                            <small class="error" id="step2Error"></small>
+                            <div class="btn-row">
+                                <button type="button" class="btn-secondary" id="toStep1">Back</button>
+                                <button type="button" class="btn-primary" id="toStep3">Verify</button>
+                            </div>
+                        </section>
+
+                        <!-- STEP 3: ID Verification -->
+                        <section class="step-panel" id="panel3">
+                            <div class="upload-box">
+                                <div class="upload-icon">🪪</div>
+                                <p class="upload-title">Upload Valid ID</p>
+                                <p class="upload-subtitle">Upload your government-issued ID for verification</p>
+                                <label class="dropzone" for="idUpload">
+                                    <span id="fileLabel">Drag &amp; drop or click to upload<br><small>PNG, JPG, PDF up to 5MB</small></span>
+                                </label>
+                                <input type="file" id="idUpload" accept=".png,.jpg,.jpeg,.pdf" hidden required>
+                            </div>
+
+                            <small class="error" id="step3Error"></small>
+                            <div class="btn-row">
+                                <button type="button" class="btn-secondary" id="toStep2b">Back</button>
+                                <button type="submit" class="btn-primary">Sign Up</button>
+                            </div>
+                        </section>
+
+                    </form>
+
+                    <p class="switch-text">Already have an account? <a href="../templates/signin.html">Sign in</a></p>
+                </div>
+
+                <div class="community-frame">
+                    <img
+                    src="../static/images/Slide.jpg"
+                    alt="Community photo"
+                    class="community-img">
+                </div>
+
+            </div>
+        </main>
+
+        <script src="../static/scripts/signup.js"></script>
+    </body>
+</html>

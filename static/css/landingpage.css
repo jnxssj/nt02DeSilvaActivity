@@ -1,0 +1,345 @@
+:root {
+    --p-900: #E59CF7;
+    --p-800: #D973F2;
+    --p-700: #CC4BEC;
+    --p-600: #BF24E5;
+    --p-500: #A11AC1;
+    --p-400: #7E1697;
+    --p-300: #5B1370;
+    --p-200: #3B0F4A;
+    --p-100: #1E0926;
+
+    --gutter: 24px;
+    --margin: 32px;
+    --sidebar-w: 248px;
+
+    --bg-app: #F4F1F6;
+    --bg-topbar: #EFE9EC;
+    --text-muted: #8A7F91;
+    --border-soft: #ECE6EF;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg-app);
+    color: var(--p-200);
+}
+
+a { text-decoration: none; }
+
+
+.app-shell {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+.sidebar {
+    width: var(--sidebar-w);
+    flex: 0 0 var(--sidebar-w);
+    background: #ffffff;
+    border-right: 1px solid var(--border-soft);
+    padding: var(--margin) 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 32px;
+    padding: 0 4px;
+}
+
+.brand-mark {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: var(--p-500);
+    flex: 0 0 34px;
+}
+
+.brand-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--p-200);
+    line-height: 1.1;
+}
+
+.brand-sub {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    letter-spacing: .02em;
+}
+
+.account-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--p-900);
+    border-radius: 12px;
+    padding: 10px 12px;
+    margin-bottom: 28px;
+}
+
+.account-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--p-200);
+    flex: 0 0 34px;
+}
+
+.account-name {
+    font-weight: 700;
+    font-size: 0.82rem;
+    color: var(--p-200);
+    line-height: 1.2;
+}
+
+.account-sub {
+    font-size: 0.68rem;
+    color: var(--p-300);
+}
+
+.account-chevron {
+    margin-left: auto;
+    color: var(--p-300);
+}
+
+.nav-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: .04em;
+    margin: 4px 4px 10px;
+}
+
+.side-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.side-nav .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    color: var(--p-300);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.side-nav .nav-link i {
+    font-size: 1rem;
+    width: 18px;
+    text-align: center;
+}
+
+.side-nav .nav-link:hover {
+    background: #FBF3FE;
+    color: var(--p-500);
+}
+
+.side-nav .nav-link.active {
+    background: var(--p-900);
+    color: var(--p-500);
+    font-weight: 700;
+}
+
+.main-col {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.topbar {
+    background: var(--bg-topbar);
+    padding: 18px var(--margin);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.topbar-date {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--p-200);
+}
+
+.topbar-brgy {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--p-500);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.topbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+.topbar-icons i { cursor: pointer; }
+
+.content {
+    padding: var(--margin);
+    flex: 1 1 auto;
+}
+
+.grid-12 {
+    --bs-gutter-x: var(--gutter);
+}
+
+.greeting-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: var(--gutter);
+}
+
+.greeting-card .carousel-inner,
+.greeting-card .carousel-item {
+    min-height: 52px;
+}
+
+.greeting-card .carousel-item {
+    padding-right: 100px;
+}
+
+.greeting-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--p-500);
+    margin-bottom: 4px;
+}
+
+.greeting-title .placeholder-name {
+    color: var(--p-500);
+}
+
+.greeting-sub {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--p-200);
+}
+
+.carousel-dots {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.carousel-dots button {
+    width: 26px;
+    height: 4px;
+    padding: 0;
+    border: none;
+    border-radius: 2px;
+    background: var(--border-soft);
+    transition: background .2s ease;
+}
+
+.carousel-dots button.active {
+    background: var(--p-300);
+}
+
+.stat-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    height: 100%;
+}
+
+.stat-icon {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    border-radius: 10px;
+    background: var(--p-900);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--p-500);
+    font-size: 1.05rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--p-200);
+}
+
+
+.mobile-topbar {
+    display: none;
+}
+
+@media (max-width: 991.98px) {
+    .sidebar {
+        position: fixed;
+        inset: 0 auto 0 0;
+        z-index: 1045;
+        transform: translateX(-100%);
+        transition: transform .25s ease;
+        box-shadow: 0 0 24px rgba(0,0,0,.15);
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+    .sidebar-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(30,9,38,.4);
+        z-index: 1040;
+        display: none;
+    }
+
+    .sidebar-backdrop.show { display: block; }
+
+    .mobile-topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #ffffff;
+        padding: 14px var(--margin);
+        border-bottom: 1px solid var(--border-soft);
+    }
+
+    :root { --margin: 20px; }
+}
+
+@media (max-width: 575.98px) {
+    .greeting-card .carousel-item {
+        padding-right: 0;
+        padding-bottom: 22px;
+    }
+
+    .carousel-dots {
+        top: auto;
+        bottom: 20px;
+        right: 32px;
+    }
+}

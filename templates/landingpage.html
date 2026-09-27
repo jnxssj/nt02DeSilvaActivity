@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EBRGY | Resident Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="../static/css/landingpage.css">
+
+</head>
+<body>
+
+<div class="app-shell">
+
+    <!-- Sidebar backdrop for mobile -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- ==== SIDEBAR === -->
+    <aside class="sidebar" id="sidebar" aria-label="Portal navigation">
+        <div class="brand">
+            <div class="brand-mark" aria-hidden="true"></div>
+            <div>
+                <div class="brand-name">EBRGY</div>
+                <div class="brand-sub">Kawiteños Portal</div>
+            </div>
+        </div>
+
+        <button type="button" class="account-card btn text-start p-0" style="border:none;">
+            <div class="account-avatar" aria-hidden="true"></div>
+            <div>
+                <div class="account-name">Resident Name</div>
+                <div class="account-sub">Resident Account</div>
+            </div>
+            <i class="bi bi-chevron-down account-chevron" aria-hidden="true"></i>
+        </button>
+
+        <div class="nav-label">YOUR PORTAL</div>
+        <nav class="side-nav">
+            <a href="#" class="nav-link" aria-current="page">
+                <i class="bi bi-grid-1x2-fill" aria-hidden="true"></i>
+                Overview
+            </a>
+            <a href="#" class="nav-link">
+                <i class="bi bi-file-earmark-text" aria-hidden="true"></i>
+                Document Request
+            </a>
+            <a href="#" class="nav-link">
+                <i class="bi bi-lightning-charge" aria-hidden="true"></i>
+                Utilities
+            </a>
+        </nav>
+    </aside>
+
+    <!-- ==== MAIN ==== -->
+    <div class="main-col">
+
+        <!-- Mobile-only topbar with menu toggle -->
+        <div class="mobile-topbar">
+            <button class="btn btn-sm" id="menuToggle" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false">
+                <i class="bi bi-list fs-4" style="color: var(--p-500);"></i>
+            </button>
+            <span class="brand-name">EBRGY</span>
+            <span style="width:32px;"></span>
+        </div>
+
+        <header class="topbar">
+            <span class="topbar-date" id="topbarDate">Week, Month Day, Year</span>
+            <span class="topbar-brgy">
+                <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+                BARANGAY PINAGKAWITAN
+            </span>
+            <span class="topbar-icons">
+                <i class="bi bi-search" role="button" aria-label="Search"></i>
+                <i class="bi bi-bell" role="button" aria-label="Notifications"></i>
+            </span>
+        </header>
+
+        <main class="content">
+            <div class="container-fluid p-0 grid-12">
+
+                <!-- Greeting carousel -->
+                <div class="row">
+                    <div class="col-12">
+                        <div id="greetingCarousel" class="carousel slide greeting-card" data-bs-ride="carousel" data-bs-interval="6000">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <h1 class="greeting-title">Good Morning, <span class="placeholder-name">|User Name|</span>.</h1>
+                                    <p class="greeting-sub mb-0">Resident Overview</p>
+                                </div>
+                                <div class="carousel-item">
+                                    <h1 class="greeting-title">3 Announcements</h1>
+                                    <p class="greeting-sub mb-0">New updates from Barangay Pinagkawitan</p>
+                                </div>
+                                <div class="carousel-item">
+                                    <h1 class="greeting-title">2 Requests In Progress</h1>
+                                    <p class="greeting-sub mb-0">Track the status of your document requests</p>
+                                </div>
+                            </div>
+                            <div class="carousel-dots">
+                                <button type="button" data-bs-target="#greetingCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#greetingCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#greetingCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stat cards -->
+                <div class="row g-3 g-md-4">
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="bi bi-people-fill" aria-hidden="true"></i></div>
+                            <div class="stat-label">Total Residents</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="bi bi-hourglass-split" aria-hidden="true"></i></div>
+                            <div class="stat-label">Pending Request</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="bi bi-box-seam" aria-hidden="true"></i></div>
+                            <div class="stat-label">To Claim</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<script src="../static/scripts/landingpage.js"></script>
+</body>
+</html>
