@@ -34,3 +34,5 @@ const sidebar = document.getElementById('sidebar');
         year: 'numeric'
     });
     dateEl.textContent = formatted.toUpperCase();
+
+    

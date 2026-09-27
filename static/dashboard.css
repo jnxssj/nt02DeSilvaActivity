@@ -21,12 +21,15 @@
 
 html, body {
     height: 100%;
+    margin: 0;
+    overflow: hidden;
 }
 
 body {
-    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
     background-color: var(--bg-app);
-    color: var(--p-200);
+    color: var(--text-primary);
 }
 
 a { text-decoration: none; }
@@ -34,7 +37,9 @@ a { text-decoration: none; }
 
 .app-shell {
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
 }
 
 
@@ -83,7 +88,7 @@ a { text-decoration: none; }
     gap: 10px;
     background: var(--p-900);
     border-radius: 12px;
-    padding: 10px 12px;
+    padding: 12px 12px;
     margin-bottom: 28px;
 }
 
@@ -99,7 +104,7 @@ a { text-decoration: none; }
     font-weight: 700;
     font-size: 0.82rem;
     color: var(--p-200);
-    line-height: 1.2;
+    line-height: 3;
 }
 
 .account-sub {
@@ -159,6 +164,8 @@ a { text-decoration: none; }
     display: flex;
     flex-direction: column;
     min-width: 0;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .topbar {

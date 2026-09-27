@@ -16,14 +16,10 @@ body {
     overflow: hidden;
 }
 
-/* ---------- Page ---------- */
-
 .page {
     height: 100vh;
     height: 100dvh;
 }
-
-/* ---------- Main Card ---------- */
 
 .card {
     display: grid;
@@ -31,8 +27,6 @@ body {
     height: 100vh;
     height: 100dvh;
 }
-
-/* ---------- Community Image ---------- */
 
 .community-frame {
     position: relative;
@@ -52,8 +46,6 @@ body {
     display: block;
     border-radius: 20px;
 }
-
-/* ---------- Form side ---------- */
 
 .form-side {
     min-width: 0;
@@ -87,8 +79,6 @@ body {
     color: #111;
     margin-bottom: 12px;
 }
-
-/* ---------- Step indicator ---------- */
 
 .steps {
     display: flex;
@@ -228,6 +218,15 @@ input:focus, select:focus { border-color: #ff7aef; }
     color: #e0304f;
     font-size: 11px;
     margin: 2px 0;
+}
+
+.field input.invalid,
+.field select.invalid {
+  border-color: #e02424;
+}
+.field .error {
+  color: #e02424;
+  font-size: 0.8rem;
 }
 
 .switch-text {

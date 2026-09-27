@@ -1,41 +1,85 @@
-var form = document.getElementById("signinForm");
-var emailInput = document.getElementById("email");
-var passwordInput = document.getElementById("password");
-var emailError = document.getElementById("emailError");
-var passwordError = document.getElementById("passwordError");
+$(document).ready(function () {
 
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
+  var $form = $("#signinForm");
+  var $email = $("#email");
+  var $password = $("#password");
+  var $emailError = $("#emailError");
+  var $passwordError = $("#passwordError");
 
-  var isValid = true;
+  var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  emailError.textContent = "";
-  passwordError.textContent = "";
-  emailInput.classList.remove("invalid");
-  passwordInput.classList.remove("invalid");
-
-  var emailValue = emailInput.value.trim();
-  if (emailValue === "") {
-    emailError.textContent = "Please enter your email.";
-    emailInput.classList.add("invalid");
-    isValid = false;
-  } else if (emailValue.indexOf("@") === -1 || emailValue.indexOf(".") === -1) {
-    emailError.textContent = "Please enter a valid email address.";
-    emailInput.classList.add("invalid");
-    isValid = false;
+  function showError($input, $errorEl, message) {
+    $errorEl.text(message);
+    $input.addClass("invalid");
   }
 
-  var passwordValue = passwordInput.value;
-  if (passwordValue === "") {
-    passwordError.textContent = "Please enter your password.";
-    passwordInput.classList.add("invalid");
-    isValid = false;
-  } else if (passwordValue.length < 8) {
-    passwordError.textContent = "Password must be at least 8 characters.";
-    passwordInput.classList.add("invalid");
-    isValid = false;
+  function clearError($input, $errorEl) {
+    $errorEl.text("");
+    $input.removeClass("invalid");
   }
 
-   if (isValid) { window.location.href = "index.html"; }
-   
+  function validateEmail() {
+    var value = $email.val().trim();
+
+    if (value === "") {
+      showError($email, $emailError, "Email is required.");
+      return false;
+    }
+
+    if (!emailPattern.test(value)) {
+      showError($email, $emailError, "Please enter a valid email address.");
+      return false;
+    }
+
+    clearError($email, $emailError);
+    return true;
+  }
+
+  function validatePassword() {
+    var value = $password.val();
+
+    if (value === "") {
+      showError($password, $passwordError, "Password is required.");
+      return false;
+    }
+
+    if (value.length < 8) {
+      showError($password, $passwordError, "Password must be at least 8 characters.");
+      return false;
+    }
+
+    if (value.length > 10) {
+      showError($password, $passwordError, "Password must not exceed 10 characters.");
+      return false;
+    }
+
+    clearError($password, $passwordError);
+    return true;
+  }
+
+  // Real-time validation: check while typing and when leaving the field
+  $email.on("input blur", validateEmail);
+  $password.on("input blur", validatePassword);
+
+  // Final validation on submit
+  $form.on("submit", function (event) {
+    event.preventDefault();
+
+    var isEmailValid = validateEmail();
+    var isPasswordValid = validatePassword();
+
+    if (!isEmailValid) {
+      $email.focus();
+      return;
+    }
+
+    if (!isPasswordValid) {
+      $password.focus();
+      return;
+    }
+
+    // All fields valid — keep existing behavior
+    window.location.href = "index.html";
+  });
+
 });

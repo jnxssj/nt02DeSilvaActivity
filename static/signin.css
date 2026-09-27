@@ -156,6 +156,15 @@ input.invalid {
     margin-top: 4px;
 }
 
+.field input.invalid,
+.field select.invalid {
+  border-color: #e02424;
+}
+.field .error {
+  color: #e02424;
+  font-size: 0.8rem;
+}
+
 .forgot-row {
     width: 80%;
     text-align: right;
