@@ -100,6 +100,6 @@ document.getElementById("signupForm").addEventListener("submit", function (event
 
   step3Error.textContent = "";
   alert("Account created! (This is a demo — connect it to a real server to go live.)");
-  window.location.href = "../templates/signin.html";
+  window.location.href = "signin.html";
   
 });

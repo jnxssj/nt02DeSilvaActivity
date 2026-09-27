@@ -36,6 +36,6 @@ form.addEventListener("submit", function (event) {
     isValid = false;
   }
 
-   if (isValid) { window.location.href = "../templates/index.html"; }
+   if (isValid) { window.location.href = "index.html"; }
    
 });
