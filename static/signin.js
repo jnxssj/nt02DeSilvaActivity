@@ -79,7 +79,7 @@ $(document).ready(function () {
     }
 
     // All fields valid — keep existing behavior
-    window.location.href = "index.html";
+    window.location.href = "dashboard.php";
   });
 
 });

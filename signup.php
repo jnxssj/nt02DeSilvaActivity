@@ -142,7 +142,7 @@
 
                     </form>
 
-                    <p class="switch-text">Already have an account? <a href="signin.html">Sign in</a></p>
+                    <p class="switch-text">Already have an account? <a href="signin.php">Sign in</a></p>
                 </div>
 
                 <div class="community-frame">

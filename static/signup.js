@@ -316,7 +316,7 @@ $(document).ready(function () {
     }
 
     alert("Account created! (This is a demo — connect it to a real server to go live.)");
-    window.location.href = "signin.html";
+    window.location.href = "signin.php";
   });
 
 });
