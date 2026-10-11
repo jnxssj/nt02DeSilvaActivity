@@ -14,15 +14,12 @@ NT 3102 - WebSysTech
 ### 2. Code Organization and Modularity 
 - [x] Header is in its own PHP file
 - [x] Navigation (sidebar/topbar) is in its own PHP file
-- [ ] Footer is in its own PHP file (if the page has one) //pages don't have a footer
-- [x] Main content is separated from the other sections
 - [x] Every file is named after the section it contains
 - [x] Section files are organized in a folder (`phpfile/`)
 
 ### 3. PHP Include Implementation
 - [x] Main PHP file created (`index.php` / `dashboard.php`)
 - [x] Each section is added to the main file using `include`
-- [x] The main file only shows `include` statements for the sections
 - [x] All included files load correctly with no errors
 
 ### 4. Form Validation Using Regular Expressions
